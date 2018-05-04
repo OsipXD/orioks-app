@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">ОРИОКС</string>
+    <string name="form_exam">Экзамен</string>
+    <string name="form_credit">Зачёт</string>
+    <string name="form_graded_credit">Дифференциированный зачёт</string>
+    <string name="form_graded_credit_short">Д. Зачёт</string>
+    <string name="subjects">Дисциплины</string>
+    <string name="debts">Долги</string>
+    <string name="none">-</string>
+    <string name="settings">Настройки</string>
+    <string name="faq">FAQ</string>
+    <string name="schedule">Расписание</string>
+    <string name="learning">Обучение</string>
+    <string name="news">Новости</string>
+    <string name="activities">Контрольные меорприятия</string>
+    <string name="screen_placeholder_title">Screen: %1$s</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+</resources>
