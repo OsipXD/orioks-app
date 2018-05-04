@@ -8,7 +8,7 @@
                                              android:paddingEnd="@dimen/space_medium"
                                              android:paddingTop="@dimen/space_normal"
                                              android:paddingBottom="@dimen/space_normal"
-                                             android:background="@android:color/background_light"
+                                             android:background="?attr/selectableItemBackground"
                                              tools:showIn="@layout/screen_subject_list"
                                              tools:context=".presentation.subjects.adapter.SubjectsAdapter">
 
@@ -47,7 +47,7 @@
         app:layout_constraintStart_toEndOf="@id/rank_text_view">
 
         <android.support.v7.widget.AppCompatTextView
-            android:id="@+id/subject_text_view"
+            android:id="@+id/subject_title_text_view"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
@@ -64,7 +64,7 @@
             android:ellipsize="end"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/subject_text_view"
+            app:layout_constraintTop_toBottomOf="@id/subject_title_text_view"
             tools:text="@string/form_graded_credit" />
     </android.support.constraint.ConstraintLayout>
 

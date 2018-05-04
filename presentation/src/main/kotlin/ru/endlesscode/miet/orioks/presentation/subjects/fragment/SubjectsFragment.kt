@@ -8,11 +8,14 @@ import kotlinx.android.synthetic.main.screen_subject_list.*
 import ru.endlesscode.github.util.makeGone
 import ru.endlesscode.miet.orioks.DummyData
 import ru.endlesscode.miet.orioks.R
+import ru.endlesscode.miet.orioks.internal.Screens
 import ru.endlesscode.miet.orioks.internal.di.DI
 import ru.endlesscode.miet.orioks.model.entity.Subject
 import ru.endlesscode.miet.orioks.model.entity.SubjectForm
 import ru.endlesscode.miet.orioks.presentation.common.fragment.BaseFragment
 import ru.endlesscode.miet.orioks.presentation.subjects.adapter.SubjectsAdapter
+import ru.terrakok.cicerone.Router
+import javax.inject.Inject
 
 class SubjectsFragment : BaseFragment() {
 
@@ -24,6 +27,9 @@ class SubjectsFragment : BaseFragment() {
 
     private val subjAdapter by lazy { SubjectsAdapter() }
     private val debtAdapter by lazy { SubjectsAdapter() }
+
+    @Inject
+    internal lateinit var router: Router
 
     override fun onCreate(savedInstanceState: Bundle?) {
         DI.main.provideComponent().inject(this)
@@ -40,6 +46,7 @@ class SubjectsFragment : BaseFragment() {
     private fun initSubjects() {
         subjects_list.init(subjAdapter)
         subjAdapter.initItems(DummyData.userSubjects)
+        subjAdapter.onItemClickListener = this@SubjectsFragment::goToSubject
     }
 
     private fun initDebts() {
@@ -52,11 +59,17 @@ class SubjectsFragment : BaseFragment() {
 
         debts_list.init(debtAdapter)
         debtAdapter.initItems(debts)
+        debtAdapter.onItemClickListener = this@SubjectsFragment::goToSubject
     }
 
     private fun RecyclerView.init(adapter: SubjectsAdapter) {
         setHasFixedSize(true)
         layoutManager = LinearLayoutManager(context)
         if (this.adapter == null) this.adapter = adapter
+    }
+
+    fun goToSubject(subject: Subject) {
+        DummyData.selectSubject(subject)
+        router.navigateTo(Screens.SUBJECT)
     }
 }

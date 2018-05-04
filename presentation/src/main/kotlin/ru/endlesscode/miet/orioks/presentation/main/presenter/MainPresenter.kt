@@ -16,4 +16,8 @@ class MainPresenter @Inject constructor(
     override fun onFirstViewAttach() {
         router.replaceScreen(Screens.STUDENTS)
     }
+
+    fun onBackPressed() {
+        router.exit()
+    }
 }

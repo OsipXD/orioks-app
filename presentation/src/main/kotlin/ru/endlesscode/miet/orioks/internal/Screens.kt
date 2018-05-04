@@ -3,6 +3,7 @@ package ru.endlesscode.miet.orioks.internal
 object Screens {
     const val MAIN_MENU = "main_menu"
     const val STUDENTS = "students"
+    const val SUBJECT = "subject"
 
     const val PROGRESS = "progress"
     const val FAQ = "faq"

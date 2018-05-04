@@ -5,6 +5,7 @@ import ru.endlesscode.github.internal.di.MainScope
 import ru.endlesscode.miet.orioks.presentation.main.activity.MainActivity
 import ru.endlesscode.miet.orioks.presentation.main.fragment.MainMenuFragment
 import ru.endlesscode.miet.orioks.presentation.main.fragment.StudentsFragment
+import ru.endlesscode.miet.orioks.presentation.subjects.fragment.SubjectFragment
 import ru.endlesscode.miet.orioks.presentation.subjects.fragment.SubjectsFragment
 
 
@@ -16,6 +17,7 @@ interface MainComponent {
     fun inject(fragment: SubjectsFragment)
     fun inject(fragment: MainMenuFragment)
     fun inject(fragment: StudentsFragment)
+    fun inject(fragment: SubjectFragment)
 
     @Subcomponent.Builder
     interface Builder {

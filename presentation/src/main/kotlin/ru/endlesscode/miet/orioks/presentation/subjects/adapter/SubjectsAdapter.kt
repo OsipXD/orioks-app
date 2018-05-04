@@ -9,7 +9,6 @@ import kotlinx.android.synthetic.main.item_subject.view.*
 import ru.endlesscode.github.util.handleVisibility
 import ru.endlesscode.miet.orioks.R
 import ru.endlesscode.miet.orioks.model.entity.Subject
-import ru.endlesscode.miet.orioks.model.entity.SubjectForm
 import ru.endlesscode.miet.orioks.presentation.common.adapter.ItemListAdapter
 
 class SubjectsAdapter : ItemListAdapter<Subject>() {
@@ -23,6 +22,8 @@ class SubjectsAdapter : ItemListAdapter<Subject>() {
                 R.color.grade_green
         )
     }
+
+    var onItemClickListener: (Subject) -> Unit = {}
 
     override fun createItemViewHolder(group: ViewGroup): ItemViewHolder = ViewHolder(group)
 
@@ -41,14 +42,15 @@ class SubjectsAdapter : ItemListAdapter<Subject>() {
             this.subject = item
 
             itemView.init()
+            registerListeners()
         }
 
         private fun View.init() {
             with(subject) {
                 rank_text_view.text = rank.toString()
                 week_indicator_image_view.handleVisibility(subject.onThisWeek)
-                subject_text_view.text = title
-                type_text_view.setText(getTypeText(type))
+                subject_title_text_view.text = title
+                type_text_view.setText(type.getTypeText())
 
                 val colorId = subject.rank / 20
                 val color = ContextCompat.getColor(context, gradeColors[colorId])
@@ -56,12 +58,8 @@ class SubjectsAdapter : ItemListAdapter<Subject>() {
             }
         }
 
-        private fun getTypeText(type: SubjectForm): Int {
-            return when (type) {
-                SubjectForm.EXAM -> R.string.form_exam
-                SubjectForm.CREDIT -> R.string.form_credit
-                SubjectForm.GRADED_CREDIT -> R.string.form_graded_credit
-            }
+        private fun registerListeners() {
+            itemView.setOnClickListener { onItemClickListener.invoke(subject) }
         }
 
     }
