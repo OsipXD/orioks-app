@@ -1,7 +1,8 @@
 package ru.endlesscode.miet.orioks.internal.di.component
 
 import dagger.Subcomponent
-import ru.endlesscode.github.internal.di.MainScope
+import ru.endlesscode.miet.orioks.internal.di.MainScope
+import ru.endlesscode.miet.orioks.internal.di.module.MainMenuNavigationModule
 import ru.endlesscode.miet.orioks.presentation.main.activity.MainActivity
 import ru.endlesscode.miet.orioks.presentation.main.fragment.MainMenuFragment
 import ru.endlesscode.miet.orioks.presentation.main.fragment.StudentsFragment
@@ -10,7 +11,7 @@ import ru.endlesscode.miet.orioks.presentation.subjects.fragment.SubjectsFragmen
 
 
 @MainScope
-@Subcomponent
+@Subcomponent(modules = [MainMenuNavigationModule::class])
 interface MainComponent {
 
     fun inject(activity: MainActivity)

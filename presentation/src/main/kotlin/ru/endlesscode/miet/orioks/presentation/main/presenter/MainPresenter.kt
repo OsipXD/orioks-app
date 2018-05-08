@@ -1,6 +1,6 @@
 package ru.endlesscode.miet.orioks.presentation.main.presenter
 
-import ru.endlesscode.github.internal.di.MainScope
+import ru.endlesscode.miet.orioks.internal.di.MainScope
 import ru.endlesscode.miet.orioks.internal.Screens
 import ru.endlesscode.miet.orioks.presentation.common.presenter.BasePresenter
 import ru.endlesscode.miet.orioks.presentation.main.view.MainView
@@ -15,9 +15,5 @@ class MainPresenter @Inject constructor(
 
     override fun onFirstViewAttach() {
         router.replaceScreen(Screens.STUDENTS)
-    }
-
-    fun onBackPressed() {
-        router.exit()
     }
 }

@@ -22,7 +22,6 @@ import javax.inject.Inject
 
 class MainActivity : BaseActivity(), MainView {
 
-    override val layoutId = R.layout.activity_fragment_container
     override val navigator: Navigator by lazy { LocalNavigator() }
 
     @Inject
@@ -37,11 +36,7 @@ class MainActivity : BaseActivity(), MainView {
         super.onCreate(savedInstanceState)
     }
 
-    override fun onBackPressed() {
-        presenter.onBackPressed()
-    }
-
-    private inner class LocalNavigator : SupportAppNavigator(this, R.id.container) {
+    private inner class LocalNavigator : SupportAppNavigator(this, containerId) {
 
         override fun createActivityIntent(context: Context?, screenKey: String?, data: Any?): Intent? = null
 

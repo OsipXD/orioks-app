@@ -1,7 +1,7 @@
 package ru.endlesscode.miet.orioks.internal.di.holder
 
 import android.app.Application
-import ru.endlesscode.github.internal.di.module.ContextModule
+import ru.endlesscode.miet.orioks.internal.di.module.ContextModule
 import ru.endlesscode.miet.orioks.internal.di.holder.common.ComponentHolder
 import ru.endlesscode.miet.orioks.internal.di.component.ApplicationComponent
 import ru.endlesscode.miet.orioks.internal.di.component.DaggerApplicationComponent

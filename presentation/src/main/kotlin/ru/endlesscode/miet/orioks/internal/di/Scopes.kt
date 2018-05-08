@@ -1,4 +1,4 @@
-package ru.endlesscode.github.internal.di
+package ru.endlesscode.miet.orioks.internal.di
 
 import javax.inject.Scope
 
