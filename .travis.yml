@@ -31,11 +31,12 @@ before_install:
   -in tmp.jks.enc -out tmp.jks -d
 - chmod +x gradlew
 - "./gradlew dependencies || true"
+- export APP_VERSION=$(./gradlew -q pV)
 before_deploy:
 - cp presentation/build/outputs/apk/release/presentation-release.apk ORIOKS.apk
 - git config --local user.name "Travis CI"
 - git config --local user.email "builds@travis-ci.org"
-- git tag "build-$(gradle -q pV)-$TRAVIS_BUILD_NUMBER" -a -m "Build \#$TRAVIS_BUILD_NUMBER"
+- git tag "build-$APP_VERSION-$TRAVIS_BUILD_NUMBER" -a -m "Build \#$TRAVIS_BUILD_NUMBER"
 deploy:
   provider: releases
   skip_cleanup: true
