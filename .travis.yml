@@ -32,7 +32,7 @@ before_install:
 - chmod +x gradlew
 - "./gradlew dependencies || true"
 before_deploy:
-- cp $HOME/presentation/build/outputs/apk/release/presentation-release.apk $HOME/ORIOKS.apk
+- cp presentation/build/outputs/apk/release/presentation-release.apk ORIOKS.apk
 deploy:
   provider: releases
   skip_cleanup: true
