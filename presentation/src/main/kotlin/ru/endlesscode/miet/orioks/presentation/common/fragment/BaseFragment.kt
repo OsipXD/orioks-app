@@ -1,6 +1,7 @@
 package ru.endlesscode.miet.orioks.presentation.common.fragment
 
 import android.os.Bundle
+import android.support.annotation.IdRes
 import android.support.annotation.LayoutRes
 import android.support.annotation.StringRes
 import android.support.design.widget.Snackbar
@@ -15,11 +16,29 @@ abstract class BaseFragment : MvpAppCompatFragment() {
     @get:LayoutRes
     protected abstract val layoutId: Int
 
+    @get:IdRes
+    protected open val containerId: Int = 0
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? = inflater.inflate(layoutId, container, false)
+
+    open fun onBackPressed(): Boolean {
+        return onBackPressedInChild() || onBackPressedHere()
+    }
+
+    open fun onBackPressedInChild(): Boolean {
+        if (containerId != 0) {
+            val fragment = childFragmentManager.findFragmentById(containerId) as? BaseFragment
+            if (fragment?.onBackPressed() == true) return true
+        }
+
+        return false
+    }
+
+    open fun onBackPressedHere(): Boolean = false
 
     fun snackbar(
         view: View,

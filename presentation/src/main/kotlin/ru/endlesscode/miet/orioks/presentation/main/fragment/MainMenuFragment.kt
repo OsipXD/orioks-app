@@ -3,6 +3,7 @@ package ru.endlesscode.miet.orioks.presentation.main.fragment
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.ActionBarDrawerToggle
+import android.view.Gravity
 import android.view.View
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
@@ -28,6 +29,7 @@ class MainMenuFragment : BaseFragment(), MainMenuView {
     }
 
     override val layoutId = R.layout.screen_main_menu
+    override val containerId = R.id.main_content
 
     @Inject
     @InjectPresenter
@@ -35,6 +37,7 @@ class MainMenuFragment : BaseFragment(), MainMenuView {
 
     private val navigator: Navigator by lazy { LocalNavigator() }
 
+    private var canGoBack = false
 
     @ProvidePresenter
     internal fun providePresenter(): MainMenuPresenter = presenter
@@ -62,9 +65,14 @@ class MainMenuFragment : BaseFragment(), MainMenuView {
         super.onPause()
     }
 
+    override fun onBackPressed(): Boolean {
+        return onBackToCloseDrawer() || super.onBackPressed()
+    }
+
     private fun registerListeners() {
         nav_view.setNavigationItemSelectedListener { menuItem ->
             if (!menuItem.isChecked) {
+                canGoBack = true
                 presenter.onNavItemSelected(menuItem.itemId)
             }
 
@@ -100,7 +108,16 @@ class MainMenuFragment : BaseFragment(), MainMenuView {
         }
     }
 
-    private inner class LocalNavigator : SupportFragmentNavigator(childFragmentManager, R.id.main_content) {
+    private fun onBackToCloseDrawer(): Boolean {
+        if (drawer_layout.isDrawerOpen(Gravity.START)) {
+            drawer_layout.closeDrawers()
+            return true
+        }
+
+        return false
+    }
+
+    private inner class LocalNavigator : SupportFragmentNavigator(childFragmentManager, containerId) {
 
         override fun exit() {
             TODO()

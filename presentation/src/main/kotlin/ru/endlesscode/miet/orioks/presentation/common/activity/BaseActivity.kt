@@ -2,12 +2,15 @@ package ru.endlesscode.miet.orioks.presentation.common.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.support.annotation.IdRes
 import android.support.annotation.LayoutRes
 import android.support.annotation.StringRes
 import android.support.design.widget.Snackbar
 import android.view.View
 import android.view.ViewGroup
 import com.arellomobile.mvp.MvpAppCompatActivity
+import ru.endlesscode.miet.orioks.R
+import ru.endlesscode.miet.orioks.presentation.common.fragment.BaseFragment
 import ru.terrakok.cicerone.Navigator
 import ru.terrakok.cicerone.NavigatorHolder
 import javax.inject.Inject
@@ -21,7 +24,11 @@ abstract class BaseActivity : MvpAppCompatActivity() {
     internal lateinit var navigatorHolder: NavigatorHolder
 
     @get:LayoutRes
-    protected abstract val layoutId: Int
+    protected open val layoutId: Int = R.layout.activity_fragment_container
+
+    @Suppress("LeakingThis")
+    @get:IdRes
+    protected open val containerId: Int = if (layoutId == R.layout.activity_fragment_container) R.id.container else 0
 
     protected open val navigator: Navigator? = null
 
@@ -45,6 +52,21 @@ abstract class BaseActivity : MvpAppCompatActivity() {
 
         super.onPause()
     }
+
+    override fun onBackPressed() {
+        if (containerId != 0) {
+            val fragment = supportFragmentManager.findFragmentById(containerId) as? BaseFragment
+            if (fragment?.onBackPressed() == true) {
+                return
+            }
+        }
+
+        if (!onBackPressedHere()) {
+            super.onBackPressed()
+        }
+    }
+
+    open fun onBackPressedHere(): Boolean = false
 
     inline fun <reified Activity> intent(init: Intent.() -> Unit = {}): Intent {
         return Intent(this, Activity::class.java).apply(init)
