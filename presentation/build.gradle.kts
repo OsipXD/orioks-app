@@ -35,7 +35,7 @@ android {
             val isRunningOnCI = System.getenv("CI") == "true"
 
             if (isRunningOnCI) {
-                storeFile = file("../store.jks.enc")
+                storeFile = file("../tmp.jks")
                 storePassword = System.getenv("keystore_password")
                 keyAlias = System.getenv("keystore_alias")
                 keyPassword = System.getenv("keystore_alias_password")
