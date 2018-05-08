@@ -33,6 +33,9 @@ before_install:
 - "./gradlew dependencies || true"
 before_deploy:
 - cp presentation/build/outputs/apk/release/presentation-release.apk ORIOKS.apk
+- git config --local user.name "Travis CI"
+- git config --local user.email "deploy@travis-ci.org"
+- git tag "SNAPSHOT-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
 deploy:
   provider: releases
   skip_cleanup: true
