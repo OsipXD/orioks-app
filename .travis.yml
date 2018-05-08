@@ -42,4 +42,4 @@ deploy:
   file: ORIOKS.apk
   on:
     repo: OsipXD/orioks-app
-    tags: true
+    branch: master
