@@ -14,13 +14,10 @@ import ru.endlesscode.miet.orioks.internal.Screens
 import ru.endlesscode.miet.orioks.internal.di.DI
 import ru.endlesscode.miet.orioks.presentation.common.fragment.BaseFragment
 import ru.endlesscode.miet.orioks.presentation.common.fragment.PlaceholderFragment
-import ru.endlesscode.miet.orioks.presentation.common.navigation.LocalCiceroneHolder
 import ru.endlesscode.miet.orioks.presentation.main.presenter.MainMenuPresenter
 import ru.endlesscode.miet.orioks.presentation.main.view.MainMenuView
 import ru.endlesscode.miet.orioks.presentation.subjects.fragment.SubjectsFragment
-import ru.terrakok.cicerone.Cicerone
 import ru.terrakok.cicerone.Navigator
-import ru.terrakok.cicerone.Router
 import ru.terrakok.cicerone.android.SupportFragmentNavigator
 import javax.inject.Inject
 
@@ -33,17 +30,14 @@ class MainMenuFragment : BaseFragment(), MainMenuView {
     override val layoutId = R.layout.screen_main_menu
 
     @Inject
-    internal lateinit var localCiceroneHolder: LocalCiceroneHolder
-
     @InjectPresenter
     internal lateinit var presenter: MainMenuPresenter
 
     private val navigator: Navigator by lazy { LocalNavigator() }
-    private val cicerone: Cicerone<Router> by lazy { localCiceroneHolder.getCicerone(Screens.MAIN_MENU) }
 
 
     @ProvidePresenter
-    internal fun providePresenter(): MainMenuPresenter = MainMenuPresenter(cicerone.router)
+    internal fun providePresenter(): MainMenuPresenter = presenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         DI.main.provideComponent().inject(this)
@@ -60,13 +54,11 @@ class MainMenuFragment : BaseFragment(), MainMenuView {
 
     override fun onResume() {
         super.onResume()
-        cicerone.navigatorHolder.setNavigator(navigator)
+        presenter.setNavigator(navigator)
     }
 
     override fun onPause() {
-        cicerone.navigatorHolder.removeNavigator()
-
-
+        presenter.removeNavigator()
         super.onPause()
     }
 
@@ -105,7 +97,7 @@ class MainMenuFragment : BaseFragment(), MainMenuView {
         }
     }
 
-    private inner class LocalNavigator : SupportFragmentNavigator(fragmentManager, R.id.drawer_content) {
+    private inner class LocalNavigator : SupportFragmentNavigator(fragmentManager, R.id.main_content) {
 
         override fun exit() {
             TODO()

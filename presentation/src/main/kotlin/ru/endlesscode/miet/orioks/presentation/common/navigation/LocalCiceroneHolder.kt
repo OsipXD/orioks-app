@@ -9,6 +9,6 @@ class LocalCiceroneHolder {
     private val containers: HashMap<String, Cicerone<Router>> = HashMap()
 
     fun getCicerone(containerTag: String): Cicerone<Router> {
-        return containers.getOrPut(containerTag, { Cicerone.create() })
+        return containers.getOrPut(containerTag) { Cicerone.create() }
     }
 }

@@ -22,7 +22,7 @@
             app:title="@string/app_name" />
 
         <FrameLayout
-            android:id="@+id/drawer_content"
+            android:id="@+id/main_content"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 

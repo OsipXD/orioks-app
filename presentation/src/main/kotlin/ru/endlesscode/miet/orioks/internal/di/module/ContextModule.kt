@@ -1,4 +1,4 @@
-package ru.endlesscode.github.internal.di.module
+package ru.endlesscode.miet.orioks.internal.di.module
 
 import android.app.Application
 import android.content.Context

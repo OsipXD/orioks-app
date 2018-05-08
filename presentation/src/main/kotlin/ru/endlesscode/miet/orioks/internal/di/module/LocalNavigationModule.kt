@@ -1,17 +1,15 @@
 package ru.endlesscode.miet.orioks.internal.di.module
 
-import dagger.*
-import ru.endlesscode.miet.orioks.presentation.common.navigation.*
-import ru.terrakok.cicerone.NavigatorHolder
-import ru.terrakok.cicerone.Router
-import javax.inject.Named
+import dagger.Module
+import dagger.Provides
+import ru.endlesscode.miet.orioks.presentation.common.navigation.LocalCiceroneHolder
 
 @Module
 object LocalNavigationModule {
 
-    private val localCiceroneHolder = LocalCiceroneHolder()
+    private val localCiceroneHolder by lazy { LocalCiceroneHolder() }
 
     @JvmStatic
     @Provides
-    fun provideLocalNavigationHolder(): LocalCiceroneHolder = localCiceroneHolder
+    fun provideLocalCiceroneHolder(): LocalCiceroneHolder = localCiceroneHolder
 }
