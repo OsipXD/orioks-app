@@ -54,11 +54,11 @@ class MainMenuFragment : BaseFragment(), MainMenuView {
 
     override fun onResume() {
         super.onResume()
-        presenter.setNavigator(navigator)
+        presenter.afterResume(navigator)
     }
 
     override fun onPause() {
-        presenter.removeNavigator()
+        presenter.beforePause()
         super.onPause()
     }
 
@@ -86,6 +86,9 @@ class MainMenuFragment : BaseFragment(), MainMenuView {
             drawer_layout.addDrawerListener(this)
             syncState()
         }
+
+        nav_view.menu.getItem(1).isChecked = true
+        presenter.onNavItemSelected(R.id.nav_learning)
     }
 
     private fun initStudentInfo() {
@@ -97,7 +100,7 @@ class MainMenuFragment : BaseFragment(), MainMenuView {
         }
     }
 
-    private inner class LocalNavigator : SupportFragmentNavigator(fragmentManager, R.id.main_content) {
+    private inner class LocalNavigator : SupportFragmentNavigator(childFragmentManager, R.id.main_content) {
 
         override fun exit() {
             TODO()

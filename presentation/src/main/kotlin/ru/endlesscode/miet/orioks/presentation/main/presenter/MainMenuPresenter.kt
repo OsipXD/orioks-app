@@ -17,15 +17,7 @@ class MainMenuPresenter @Inject constructor(@Local private val cicerone: Ciceron
 
     private val router get() = cicerone.router
     private val navigatorHolder get() = cicerone.navigatorHolder
-    private var currentItem: Int = 0
-
-    override fun attachView(view: MainMenuView) {
-        super.attachView(view)
-
-        if (currentItem != 0) {
-            TODO()
-        }
-    }
+    private var currentScreen: String = Screens.PROGRESS
 
     fun onNavItemSelected(itemId: Int) {
         val screen = when (itemId) {
@@ -37,15 +29,19 @@ class MainMenuPresenter @Inject constructor(@Local private val cicerone: Ciceron
             else -> error("Unknown navigation menu item!")
         }
 
-        currentItem = itemId
-        router.navigateTo(screen)
+        currentScreen = screen
+        navigateToCurrentScreen()
     }
 
-    fun setNavigator(navigator: Navigator) {
+    fun afterResume(navigator: Navigator) {
         navigatorHolder.setNavigator(navigator)
     }
 
-    fun removeNavigator() {
+    fun beforePause() {
         navigatorHolder.removeNavigator()
+    }
+
+    private fun navigateToCurrentScreen() {
+        router.navigateTo(currentScreen)
     }
 }
