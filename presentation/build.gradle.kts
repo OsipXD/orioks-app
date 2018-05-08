@@ -15,9 +15,6 @@ apply {
 val appConfig: AppConfiguration by rootProject.extra
 val kotlinVersion: String by rootProject.extra
 
-val secretProperties = Properties()
-secretProperties.load(FileInputStream(project.file("secret.properties")))
-
 android {
     compileSdkVersion(appConfig.android.targetApi)
     buildToolsVersion(appConfig.android.buildTools)
@@ -35,10 +32,21 @@ android {
 
     signingConfigs {
         create("release") {
-            keyAlias = secretProperties.getProperty("keyAlias") ?: error("'keyAlias' should be specified")
-            keyPassword = secretProperties.getProperty("keyPassword") ?: error("'keyPassword' should be specified")
-            storeFile = file(secretProperties.getProperty("storeFile") ?: error("'storeFile' should be specified"))
-            storePassword = secretProperties.getProperty("storePassword") ?: error("'storePassword' should be specified")
+            val isRunningOnCI = System.getenv("CI") == "true"
+
+            if (isRunningOnCI) {
+                storeFile = file("../store.jks.enc")
+                storePassword = System.getenv("keystore_password")
+                keyAlias = System.getenv("keystore_alias")
+                keyPassword = System.getenv("keystore_alias_password")
+            } else {
+                val secretProperties = Properties()
+                secretProperties.load(FileInputStream(project.file("secret.properties")))
+                keyAlias = secretProperties.getProperty("keyAlias") ?: error("'keyAlias' should be specified")
+                keyPassword = secretProperties.getProperty("keyPassword") ?: error("'keyPassword' should be specified")
+                storeFile = file(secretProperties.getProperty("storeFile") ?: error("'storeFile' should be specified"))
+                storePassword = secretProperties.getProperty("storePassword") ?: error("'storePassword' should be specified")
+            }
         }
     }
 
