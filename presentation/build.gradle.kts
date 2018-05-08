@@ -77,3 +77,8 @@ dependencies {
     appConfig.kapt.applyAll { kapt(it) }
     appConfig.testLib.applyAll { testImplementation(it) }
 }
+
+
+task("printVersion").doLast {
+    print(android.defaultConfig.versionName)
+}
