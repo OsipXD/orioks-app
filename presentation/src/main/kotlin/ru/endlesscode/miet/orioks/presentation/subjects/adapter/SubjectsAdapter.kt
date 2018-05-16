@@ -14,6 +14,8 @@ import ru.endlesscode.miet.orioks.presentation.common.adapter.ItemListAdapter
 class SubjectsAdapter : ItemListAdapter<Subject>() {
 
     companion object {
+        private val gradeZones = listOf(25, 50, 70, 85, 100)
+
         private val gradeColors = arrayOf(
                 R.color.grade_red,
                 R.color.grade_orange,
@@ -59,7 +61,7 @@ class SubjectsAdapter : ItemListAdapter<Subject>() {
                 }
 
                 rank_text_view.text = rank.toString()
-                val colorId = (rank + 1) / 20 - 1
+                val colorId = gradeZones.indexOfFirst { rank <= it }
                 val color = ContextCompat.getColor(context, gradeColors[colorId])
                 ViewCompat.setBackgroundTintList(rank_text_view, ColorStateList.valueOf(color))
             }
