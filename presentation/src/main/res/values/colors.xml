@@ -12,4 +12,5 @@
     <color name="red_dark">#E64A19</color>
     <color name="primary_semitransparent">#F00277BD</color>
     <color name="dark_icon_color">#6F000000</color>
+    <color name="white">#FFF</color>
 </resources>

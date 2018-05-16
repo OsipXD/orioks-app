@@ -13,7 +13,7 @@ class MainPresenter @Inject constructor(
         private val router: Router
 ) : BasePresenter<MainView>() {
 
-    override fun onFirstViewAttach() {
+    fun goToFirstScreen() {
         router.replaceScreen(Screens.STUDENTS)
     }
 }

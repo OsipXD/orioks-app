@@ -1,6 +1,7 @@
 package ru.endlesscode.miet.orioks.presentation.subjects.fragment
 
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
 import android.view.View
 import kotlinx.android.synthetic.main.screen_subject.*
 import ru.endlesscode.miet.orioks.DummyData
@@ -40,6 +41,7 @@ class SubjectFragment : BaseFragment() {
     private fun initViews() {
         with(DummyData.subject) {
             subject_title_text_view.text = title
+            subject_title_text_view.movementMethod = ScrollingMovementMethod()
             type_text_view.setText(type.getTypeText())
             teachers_text_view.text = teachers.joinToString("\n")
             department_text_view.text = department

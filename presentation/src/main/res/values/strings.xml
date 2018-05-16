@@ -16,4 +16,5 @@
     <string name="screen_placeholder_title">Screen: %1$s</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="form_diploma">Защита ВКР</string>
 </resources>
