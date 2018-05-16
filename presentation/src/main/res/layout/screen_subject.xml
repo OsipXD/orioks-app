@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
                                              android:layout_width="match_parent"
                                              android:layout_height="match_parent"
+                                             tools:context=".presentation.subjects.fragment.SubjectFragment"
                                              xmlns:app="http://schemas.android.com/apk/res-auto"
                                              xmlns:tools="http://schemas.android.com/tools">
 
@@ -19,7 +20,7 @@
             android:layout_margin="@dimen/space_medium"
             android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
             android:maxLines="3"
-            android:scrollbars="horizontal"
+            android:scrollbars="vertical"
             tools:text="Управление программными проектами" />
     </android.support.v7.widget.Toolbar>
 

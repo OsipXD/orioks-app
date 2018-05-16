@@ -34,6 +34,10 @@ class MainActivity : BaseActivity(), MainView {
     override fun onCreate(savedInstanceState: Bundle?) {
         DI.main.provideComponent().inject(this)
         super.onCreate(savedInstanceState)
+
+        if (savedInstanceState == null) {
+            presenter.goToFirstScreen()
+        }
     }
 
     private inner class LocalNavigator : SupportAppNavigator(this, containerId) {
