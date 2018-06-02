@@ -17,7 +17,7 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="form_diploma">Защита ВКР</string>
-    <string name="event">Мероприятие</string>
+    <string name="test">Контрольное мероприятие</string>
     <string name="rank">Балл</string>
     <string name="test_max_rank">из %1$d</string>
     <string name="week_short">нед.</string>

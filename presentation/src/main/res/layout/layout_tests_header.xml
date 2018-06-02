@@ -17,7 +17,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingBottom="@dimen/space_small"
-        android:text="@string/event"
+        android:text="@string/test"
         android:textAppearance="@style/TinyTitle"
         app:layout_constraintStart_toStartOf="@id/title_guideline"
         app:layout_constraintTop_toTopOf="parent"/>

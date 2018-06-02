@@ -20,7 +20,7 @@
         android:id="@+id/type_text_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/space_large"
+        android:layout_marginStart="24dp"
         android:layout_marginEnd="@dimen/space_medium"
         android:text="@string/form_graded_credit"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
@@ -43,7 +43,7 @@
         android:id="@+id/teachers_text_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/space_large"
+        android:layout_marginStart="24dp"
         android:layout_marginEnd="@dimen/space_medium"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:layout_constraintTop_toTopOf="@id/teachers_image_view"
@@ -64,7 +64,7 @@
         android:id="@+id/department_text_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/space_large"
+        android:layout_marginStart="24dp"
         android:layout_marginEnd="@dimen/space_medium"
         android:layout_marginTop="@dimen/space_medium"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
@@ -73,25 +73,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         tools:text="Кафедра информатики и программного обеспечения вычислительных систем"/>
 
-    <android.support.v7.widget.AppCompatTextView
-        android:id="@+id/tests_title_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/space_medium"
-        android:layout_marginStart="@dimen/space_medium"
-        android:text="@string/activities"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@android:color/primary_text_light"
-        app:layout_constraintTop_toBottomOf="@id/department_text_view"
-        app:layout_constraintStart_toStartOf="parent"/>
-
     <include
         layout="@layout/layout_tests_header"
         android:id="@+id/tests_header"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:layout_marginTop="@dimen/space_normal"
-        app:layout_constraintTop_toBottomOf="@id/tests_title_text_view"/>
+        android:layout_marginTop="@dimen/space_medium"
+        app:layout_constraintTop_toBottomOf="@id/department_text_view"/>
 
     <LinearLayout
         android:id="@+id/test_weeks_linear_layout"
