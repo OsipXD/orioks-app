@@ -79,7 +79,7 @@ class SubjectFragment : BaseFragment() {
                 name_text_view.text = it
                 name_text_view.show()
             }
-            rank_current_text_view.text = test.rank.toString()
+            rank_current_text_view.text = test.rank.takeIf { it >= 0 }?.toString() ?: "-"
             rank_max_text_view.text = getString(R.string.test_max_rank, test.maxRank)
         }
 

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#0277BD</color>
-    <color name="colorPrimaryDark">#01579B</color>
-    <color name="colorAccent">#B300BCD4</color>
+    <color name="colorPrimary">@color/md_light_blue_800</color>
+    <color name="colorPrimaryDark">@color/md_light_blue_900</color>
+    <color name="colorAccent">@color/md_light_blue_600</color>
     <color name="background_gray">#EEEEEE</color>
-    <color name="grade_red">#FF7043</color>
-    <color name="grade_orange">#FF9800</color>
-    <color name="grade_amber">#FFD54F</color>
-    <color name="grade_lime">#CDDC39</color>
-    <color name="grade_green">#66BB6A</color>
-    <color name="red_dark">#E64A19</color>
+    <color name="grade_red">@color/md_red_600</color>
+    <color name="grade_orange">@color/md_orange_500</color>
+    <color name="grade_amber">@color/md_amber_300</color>
+    <color name="grade_lime">@color/md_lime_500</color>
+    <color name="grade_green">@color/md_green_400</color>
+    <color name="red_dark">@color/md_red_900</color>
     <color name="primary_semitransparent">#F00277BD</color>
     <color name="dark_icon_color">#6F000000</color>
     <color name="white">#FFF</color>

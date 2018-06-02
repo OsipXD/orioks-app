@@ -8,7 +8,11 @@ data class Subject(
         val onThisWeek: Boolean,
         val tests: List<Test>
 ) {
-    val rank get() = tests.map { it.rank }.sum()
+    val rank: Int
+        get() = tests.map {
+            if (it.rank == -1) return -1
+            it.rank
+        }.sum()
 }
 
 enum class SubjectForm {
