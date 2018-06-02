@@ -7,7 +7,7 @@ import android.view.Gravity
 import android.view.View
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
-import kotlinx.android.synthetic.main.navigation_header.view.*
+import kotlinx.android.synthetic.main.layout_navigation_header.view.*
 import kotlinx.android.synthetic.main.screen_main_menu.*
 import ru.endlesscode.miet.orioks.DummyData
 import ru.endlesscode.miet.orioks.R

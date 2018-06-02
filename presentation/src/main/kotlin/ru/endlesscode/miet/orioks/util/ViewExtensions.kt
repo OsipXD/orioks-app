@@ -1,5 +1,7 @@
-package ru.endlesscode.github.util
+package ru.endlesscode.miet.orioks.util
 
+import android.content.res.ColorStateList
+import android.support.v4.view.ViewCompat
 import android.view.View
 
 
@@ -22,3 +24,11 @@ fun View.makeGone() {
 fun View.hide() {
     visibility = View.INVISIBLE
 }
+
+//
+// Compat
+//
+
+var View.backgroundTintListCompat: ColorStateList
+    set(value) = ViewCompat.setBackgroundTintList(this, value)
+    get() = ViewCompat.getBackgroundTintList(this)

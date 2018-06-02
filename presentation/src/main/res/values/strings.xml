@@ -12,9 +12,13 @@
     <string name="schedule">Расписание</string>
     <string name="learning">Обучение</string>
     <string name="news">Новости</string>
-    <string name="activities">Контрольные меорприятия</string>
+    <string name="activities">Контрольные мероприятия</string>
     <string name="screen_placeholder_title">Screen: %1$s</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="form_diploma">Защита ВКР</string>
+    <string name="test">Контрольное мероприятие</string>
+    <string name="rank">Балл</string>
+    <string name="test_max_rank">из %1$d</string>
+    <string name="week_short">нед.</string>
 </resources>

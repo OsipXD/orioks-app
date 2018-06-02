@@ -7,4 +7,5 @@
     <dimen name="nav_header_height">168dp</dimen>
     <dimen name="nav_header_width">280dp</dimen>
     <dimen name="space_large">32dp</dimen>
+    <dimen name="round_corners_radius">2dp</dimen>
 </resources>

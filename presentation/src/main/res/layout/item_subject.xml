@@ -21,9 +21,10 @@
         android:maxLength="3"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:text="@string/none"
-        tools:backgroundTint="@color/grade_green"
+        app:backgroundTint="@android:color/transparent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        tools:backgroundTint="@color/grade_green"
         tools:text="58" />
 
     <android.support.v7.widget.AppCompatImageView

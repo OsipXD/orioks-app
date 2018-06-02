@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="wrap_content"
+                                             tools:showIn="@layout/screen_subject">
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/type_image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_medium"
+        android:layout_marginTop="@dimen/space_medium"
+        app:srcCompat="@drawable/ic_clipboard_check_dark_24dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/type_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="@dimen/space_medium"
+        android:text="@string/form_graded_credit"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintTop_toTopOf="@id/type_image_view"
+        app:layout_constraintBottom_toBottomOf="@id/type_image_view"
+        app:layout_constraintStart_toEndOf="@id/type_image_view"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/teachers_image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_medium"
+        android:layout_marginTop="@dimen/space_medium"
+        app:srcCompat="@drawable/ic_teach_dark_24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/type_image_view"/>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/teachers_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="@dimen/space_medium"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintTop_toTopOf="@id/teachers_image_view"
+        app:layout_constraintStart_toEndOf="@id/teachers_image_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Иванов Иван Иванович\nМезенев Пётр Анатольевич\nЖаров Василий Павлович"/>
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/department_image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_medium"
+        app:srcCompat="@drawable/ic_group_dark_24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/department_text_view"/>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/department_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="@dimen/space_medium"
+        android:layout_marginTop="@dimen/space_medium"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintTop_toBottomOf="@id/teachers_text_view"
+        app:layout_constraintStart_toEndOf="@id/department_image_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Кафедра информатики и программного обеспечения вычислительных систем"/>
+
+    <include
+        layout="@layout/layout_tests_header"
+        android:id="@+id/tests_header"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/space_medium"
+        app:layout_constraintTop_toBottomOf="@id/department_text_view"/>
+
+    <LinearLayout
+        android:id="@+id/test_weeks_linear_layout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/space_normal"
+        android:showDividers="middle"
+        android:divider="@drawable/drawable_divider_dim"
+        app:layout_constraintTop_toBottomOf="@id/tests_header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>

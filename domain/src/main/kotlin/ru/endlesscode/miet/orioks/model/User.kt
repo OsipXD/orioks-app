@@ -1,4 +1,4 @@
-package ru.endlesscode.miet.orioks.model.entity
+package ru.endlesscode.miet.orioks.model
 
 data class User(
         val name: String,

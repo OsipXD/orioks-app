@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="wrap_content"
+                                             tools:showIn="@layout/screen_subject">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/title_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_begin="64dp"
+        android:orientation="vertical"/>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/space_small"
+        android:text="@string/test"
+        android:textAppearance="@style/TinyTitle"
+        app:layout_constraintStart_toStartOf="@id/title_guideline"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/rank_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_end="52dp"
+        android:orientation="vertical"/>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/space_small"
+        android:text="@string/rank"
+        android:textAppearance="@style/TinyTitle"
+        app:layout_constraintStart_toStartOf="@id/rank_guideline"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <include
+        layout="@layout/layout_divider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+</android.support.constraint.ConstraintLayout>
