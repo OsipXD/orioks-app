@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:showIn="@layout/screen_subject">
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/week_text_view"
+        android:layout_width="32dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="@dimen/space_medium"
+        android:layout_marginTop="@dimen/space_normal"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:includeFontPadding="false"
+        android:maxLength="2"
+        android:lines="1"
+        tools:text="17"/>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/week_caption_text_view"
+        android:layout_width="32dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/week_text_view"
+        android:layout_marginStart="@dimen/space_medium"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:includeFontPadding="false"
+        android:lines="1"
+        tools:text="нед."/>
+
+    <LinearLayout
+        android:id="@+id/tests_list_view"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@id/week_text_view"
+        android:layout_marginTop="@dimen/space_normal"
+        android:layout_marginBottom="@dimen/space_normal"
+        android:layout_marginStart="@dimen/space_medium"
+        android:layout_marginEnd="@dimen/space_medium"
+        android:showDividers="middle"
+        android:divider="@drawable/divider_drawable">
+
+        <include
+            tools:layout="@layout/item_test"/>
+
+        <include
+            tools:layout="@layout/item_test"/>
+
+        <include
+            tools:layout="@layout/item_test"/>
+    </LinearLayout>
+</RelativeLayout>

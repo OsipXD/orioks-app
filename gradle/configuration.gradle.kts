@@ -1,6 +1,6 @@
 
 // Versions
-val kotlinVersion by extra("1.2.40")
+val kotlinVersion by extra("1.2.41")
 val androidGradleVersion = "3.0.1"
 
 val supportLibVersion = "27.1.1"
