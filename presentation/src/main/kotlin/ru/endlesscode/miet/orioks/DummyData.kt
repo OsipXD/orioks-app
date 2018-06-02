@@ -57,7 +57,7 @@ object DummyData {
 
     val userDebts = listOf<Subject>()
 
-    lateinit var subject: Subject
+    var subject: Subject = userSubjects.last()
 
     fun selectSubject(subject: Subject) {
         this.subject = subject

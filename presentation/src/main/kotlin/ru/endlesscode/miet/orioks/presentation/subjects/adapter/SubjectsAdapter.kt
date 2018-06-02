@@ -1,30 +1,19 @@
 package ru.endlesscode.miet.orioks.presentation.subjects.adapter
 
 import android.content.res.ColorStateList
-import android.support.v4.content.ContextCompat
-import android.support.v4.view.ViewCompat
 import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.item_subject.view.*
-import ru.endlesscode.miet.orioks.util.handleVisibility
 import ru.endlesscode.miet.orioks.R
+import ru.endlesscode.miet.orioks.converter.GradeConverter
 import ru.endlesscode.miet.orioks.converter.getTypeText
 import ru.endlesscode.miet.orioks.model.Subject
 import ru.endlesscode.miet.orioks.presentation.common.adapter.ItemListAdapter
+import ru.endlesscode.miet.orioks.util.backgroundTintListCompat
+import ru.endlesscode.miet.orioks.util.getColorCompat
+import ru.endlesscode.miet.orioks.util.handleVisibility
 
 class SubjectsAdapter : ItemListAdapter<Subject>() {
-
-    companion object {
-        private val gradeZones = listOf(25, 50, 70, 85, 100)
-
-        private val gradeColors = arrayOf(
-                R.color.grade_red,
-                R.color.grade_orange,
-                R.color.grade_amber,
-                R.color.grade_lime,
-                R.color.grade_green
-        )
-    }
 
     var onItemClickListener: (Subject) -> Unit = {}
 
@@ -56,15 +45,13 @@ class SubjectsAdapter : ItemListAdapter<Subject>() {
 
                 if (rank == -1) {
                     rank_text_view.text = "-"
-                    val color = resources.getColor(R.color.white)
-                    ViewCompat.setBackgroundTintList(rank_text_view, ColorStateList.valueOf(color))
-                    return
+                    return@with
                 }
 
                 rank_text_view.text = rank.toString()
-                val colorId = gradeZones.indexOfFirst { rank <= it }
-                val color = ContextCompat.getColor(context, gradeColors[colorId])
-                ViewCompat.setBackgroundTintList(rank_text_view, ColorStateList.valueOf(color))
+                val colorId = GradeConverter.rankToColor(rank)
+                val color = context.getColorCompat(colorId)
+                rank_text_view.backgroundTintListCompat = ColorStateList.valueOf(color)
             }
         }
 

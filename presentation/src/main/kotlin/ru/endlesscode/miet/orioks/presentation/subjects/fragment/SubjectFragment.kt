@@ -9,14 +9,15 @@ import kotlinx.android.synthetic.main.item_test_week.view.*
 import kotlinx.android.synthetic.main.layout_subject_data.*
 import kotlinx.android.synthetic.main.screen_subject.*
 import ru.endlesscode.github.util.inflateChild
-import ru.endlesscode.miet.orioks.util.makeGone
 import ru.endlesscode.miet.orioks.DummyData
 import ru.endlesscode.miet.orioks.R
+import ru.endlesscode.miet.orioks.converter.GradeConverter
 import ru.endlesscode.miet.orioks.converter.getTypeText
 import ru.endlesscode.miet.orioks.internal.di.DI
 import ru.endlesscode.miet.orioks.model.Test
 import ru.endlesscode.miet.orioks.presentation.common.fragment.BaseFragment
 import ru.endlesscode.miet.orioks.util.chunkedBy
+import ru.endlesscode.miet.orioks.util.getColorCompat
 import ru.endlesscode.miet.orioks.util.show
 import ru.terrakok.cicerone.Router
 import javax.inject.Inject
@@ -79,8 +80,18 @@ class SubjectFragment : BaseFragment() {
                 name_text_view.text = it
                 name_text_view.show()
             }
-            rank_current_text_view.text = test.rank.takeIf { it >= 0 }?.toString() ?: "-"
+
             rank_max_text_view.text = getString(R.string.test_max_rank, test.maxRank)
+
+            if (test.rank < 0) {
+                rank_current_text_view.text = "-"
+                return@with
+            }
+
+            rank_current_text_view.text = test.rank.toString()
+            val colorId = GradeConverter.rankToColor(test.rank, test.maxRank)
+            val color = context.getColorCompat(colorId)
+            rank_current_text_view.setTextColor(color)
         }
 
         this.addView(testView)
