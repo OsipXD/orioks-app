@@ -128,13 +128,21 @@ class MainMenuFragment : BaseFragment(), MainMenuView {
         }
 
         override fun createFragment(screenKey: String, data: Any?): Fragment? {
+            val titleId = when (screenKey) {
+                Screens.PROGRESS -> R.string.learning
+                Screens.NEWS -> R.string.news
+                Screens.SETTINGS -> R.string.settings
+                Screens.SCHEDULE -> R.string.schedule
+                Screens.FAQ -> R.string.faq
+                else -> 0
+            }
+
+            val title = titleId.takeIf { it != 0 }?.let { context?.getString(it) } ?: return null
+            toolbar.title = title
+
             return when (screenKey) {
                 Screens.PROGRESS -> SubjectsFragment.newInstance()
-                Screens.NEWS -> PlaceholderFragment.newInstance("Новости")
-                Screens.SETTINGS -> PlaceholderFragment.newInstance("Настройки")
-                Screens.SCHEDULE -> PlaceholderFragment.newInstance("Расписание")
-                Screens.FAQ -> PlaceholderFragment.newInstance("FAQ")
-                else -> null
+                else -> PlaceholderFragment.newInstance(title)
             }
         }
     }
