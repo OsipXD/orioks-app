@@ -5,7 +5,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import kotlinx.android.synthetic.main.screen_subject_list.*
-import ru.endlesscode.github.util.makeGone
+import ru.endlesscode.miet.orioks.util.makeGone
 import ru.endlesscode.miet.orioks.DummyData
 import ru.endlesscode.miet.orioks.R
 import ru.endlesscode.miet.orioks.internal.Screens

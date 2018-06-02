@@ -8,5 +8,6 @@ fun SubjectForm.getTypeText(): Int {
         SubjectForm.EXAM -> R.string.form_exam
         SubjectForm.CREDIT -> R.string.form_credit
         SubjectForm.GRADED_CREDIT -> R.string.form_graded_credit
+        SubjectForm.DIPLOMA -> R.string.form_diploma
     }
 }

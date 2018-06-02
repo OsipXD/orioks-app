@@ -3,7 +3,6 @@ package ru.endlesscode.miet.orioks.presentation.main.fragment
 import android.os.Bundle
 import android.view.View
 import kotlinx.android.synthetic.main.screen_students.*
-import ru.endlesscode.miet.orioks.DummyData
 import ru.endlesscode.miet.orioks.R
 import ru.endlesscode.miet.orioks.internal.Screens
 import ru.endlesscode.miet.orioks.internal.di.DI
@@ -35,12 +34,10 @@ class StudentsFragment : BaseFragment() {
     }
 
     private fun registerListeners() {
-        student1_button.setOnClickListener { goToNextScreen(0) }
-        student2_button.setOnClickListener { goToNextScreen(1) }
+        student1_button.setOnClickListener { goToNextScreen() }
     }
 
-    private fun goToNextScreen(id: Int) {
-        DummyData.select(id)
+    private fun goToNextScreen() {
         router.navigateTo(Screens.MAIN_MENU)
     }
 }

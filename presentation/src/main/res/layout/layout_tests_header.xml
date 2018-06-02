@@ -16,8 +16,9 @@
     <android.support.v7.widget.AppCompatTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/space_small"
         android:text="@string/event"
-        android:textAppearance="@style/TinyText"
+        android:textAppearance="@style/TinyTitle"
         app:layout_constraintStart_toStartOf="@id/title_guideline"
         app:layout_constraintTop_toTopOf="parent"/>
 
@@ -31,8 +32,17 @@
     <android.support.v7.widget.AppCompatTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/space_small"
         android:text="@string/rank"
-        android:textAppearance="@style/TinyText"
+        android:textAppearance="@style/TinyTitle"
         app:layout_constraintStart_toStartOf="@id/rank_guideline"
         app:layout_constraintTop_toTopOf="parent"/>
+
+    <include
+        layout="@layout/layout_divider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
 </android.support.constraint.ConstraintLayout>

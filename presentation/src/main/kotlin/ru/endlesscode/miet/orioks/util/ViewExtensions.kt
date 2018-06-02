@@ -1,4 +1,4 @@
-package ru.endlesscode.github.util
+package ru.endlesscode.miet.orioks.util
 
 import android.view.View
 

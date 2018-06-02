@@ -6,7 +6,7 @@ import android.support.v4.view.ViewCompat
 import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.item_subject.view.*
-import ru.endlesscode.github.util.handleVisibility
+import ru.endlesscode.miet.orioks.util.handleVisibility
 import ru.endlesscode.miet.orioks.R
 import ru.endlesscode.miet.orioks.converter.getTypeText
 import ru.endlesscode.miet.orioks.model.Subject
@@ -56,7 +56,7 @@ class SubjectsAdapter : ItemListAdapter<Subject>() {
 
                 if (rank == -1) {
                     rank_text_view.text = "-"
-                    val color = resources.getColor(R.color.white);
+                    val color = resources.getColor(R.color.white)
                     ViewCompat.setBackgroundTintList(rank_text_view, ColorStateList.valueOf(color))
                     return
                 }

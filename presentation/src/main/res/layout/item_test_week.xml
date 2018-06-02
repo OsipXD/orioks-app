@@ -2,8 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:showIn="@layout/screen_subject">
+                android:layout_height="wrap_content">
 
     <android.support.v7.widget.AppCompatTextView
         android:id="@+id/week_text_view"
@@ -29,10 +28,10 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:includeFontPadding="false"
         android:lines="1"
-        tools:text="нед."/>
+        android:text="@string/week_short"/>
 
     <LinearLayout
-        android:id="@+id/tests_list_view"
+        android:id="@+id/tests_list_linear_layout"
         android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -44,15 +43,5 @@
         android:layout_marginStart="@dimen/space_medium"
         android:layout_marginEnd="@dimen/space_medium"
         android:showDividers="middle"
-        android:divider="@drawable/divider_drawable">
-
-        <include
-            tools:layout="@layout/item_test"/>
-
-        <include
-            tools:layout="@layout/item_test"/>
-
-        <include
-            tools:layout="@layout/item_test"/>
-    </LinearLayout>
+        android:divider="@drawable/drawable_divider_dim"/>
 </RelativeLayout>

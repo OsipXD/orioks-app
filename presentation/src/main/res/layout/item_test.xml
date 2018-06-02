@@ -5,28 +5,36 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <android.support.v7.widget.AppCompatTextView
-        android:id="@+id/type_text_view"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_toStartOf="@id/rank_view"
         android:layout_marginEnd="@dimen/space_normal"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:lines="1"
-        android:ellipsize="end"
-        tools:text="[Лабораторная работа (ЛР.1)]" />
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
 
-    <android.support.v7.widget.AppCompatTextView
-        android:id="@+id/name_text_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/type_text_view"
-        android:layout_toStartOf="@id/rank_view"
-        android:layout_marginEnd="@dimen/space_normal"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        android:ellipsize="marquee"
-        android:singleLine="true"
-        tools:text="[Определение токсичных ионов в водной среде]" />
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/type_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/space_normal"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:lines="1"
+            android:ellipsize="end"
+            tools:text="[Лабораторная работа (ЛР.1)]"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/name_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:ellipsize="marquee"
+            android:singleLine="true"
+            android:visibility="gone"
+            tools:text="[Определение токсичных ионов в водной среде]"
+            tools:visibility="visible"/>
+
+    </LinearLayout>
 
     <RelativeLayout
         android:id="@+id/rank_view"
@@ -42,7 +50,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:includeFontPadding="false"
             android:lines="1"
-            tools:textColor="@color/grade_red"
+            android:textColor="?android:textColorPrimary"
             tools:text="7" />
 
         <android.support.v7.widget.AppCompatTextView
