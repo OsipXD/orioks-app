@@ -8,7 +8,8 @@ import android.view.ViewGroup
 import kotlinx.android.synthetic.main.item_subject.view.*
 import ru.endlesscode.github.util.handleVisibility
 import ru.endlesscode.miet.orioks.R
-import ru.endlesscode.miet.orioks.model.entity.Subject
+import ru.endlesscode.miet.orioks.converter.getTypeText
+import ru.endlesscode.miet.orioks.model.Subject
 import ru.endlesscode.miet.orioks.presentation.common.adapter.ItemListAdapter
 
 class SubjectsAdapter : ItemListAdapter<Subject>() {

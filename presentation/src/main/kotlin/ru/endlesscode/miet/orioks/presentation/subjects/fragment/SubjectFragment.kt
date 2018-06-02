@@ -3,9 +3,11 @@ package ru.endlesscode.miet.orioks.presentation.subjects.fragment
 import android.os.Bundle
 import android.text.method.ScrollingMovementMethod
 import android.view.View
+import kotlinx.android.synthetic.main.layout_subject_data.*
 import kotlinx.android.synthetic.main.screen_subject.*
 import ru.endlesscode.miet.orioks.DummyData
 import ru.endlesscode.miet.orioks.R
+import ru.endlesscode.miet.orioks.converter.getTypeText
 import ru.endlesscode.miet.orioks.internal.di.DI
 import ru.endlesscode.miet.orioks.presentation.common.fragment.BaseFragment
 import ru.terrakok.cicerone.Router

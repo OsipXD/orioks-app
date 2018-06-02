@@ -70,7 +70,7 @@ android {
 dependencies {
     implementation(kotlin("stdlib-jdk7", kotlinVersion))
 
-    //api(project(":domain"))
+    api(project(":domain"))
     //api(project(":data"))
 
     appConfig.lib.applyAll { implementation(it) }

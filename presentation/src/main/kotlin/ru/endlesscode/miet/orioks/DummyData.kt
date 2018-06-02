@@ -1,8 +1,8 @@
 package ru.endlesscode.miet.orioks
 
-import ru.endlesscode.miet.orioks.model.entity.Subject
-import ru.endlesscode.miet.orioks.model.entity.SubjectForm
-import ru.endlesscode.miet.orioks.model.entity.User
+import ru.endlesscode.miet.orioks.model.Subject
+import ru.endlesscode.miet.orioks.model.SubjectForm
+import ru.endlesscode.miet.orioks.model.User
 
 object DummyData {
 
