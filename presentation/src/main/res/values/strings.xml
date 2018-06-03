@@ -22,4 +22,8 @@
     <string name="test_max_rank">из %1$d</string>
     <string name="week_short">нед.</string>
     <string name="subject_title">Название дисциплины</string>
+    <string name="student_number">Номер студенческого билета</string>
+    <string name="password">Пароль</string>
+    <string name="remember_password">Запомнить пароль</string>
+    <string name="log_in">Войти</string>
 </resources>
