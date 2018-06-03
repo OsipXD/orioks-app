@@ -6,13 +6,12 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
-import ru.endlesscode.miet.orioks.R
 import ru.endlesscode.miet.orioks.internal.Screens
 import ru.endlesscode.miet.orioks.internal.di.DI
+import ru.endlesscode.miet.orioks.presentation.auth.fragment.AuthFragment
 import ru.endlesscode.miet.orioks.presentation.common.activity.BaseActivity
 import ru.endlesscode.miet.orioks.presentation.common.fragment.PlaceholderFragment
 import ru.endlesscode.miet.orioks.presentation.main.fragment.MainMenuFragment
-import ru.endlesscode.miet.orioks.presentation.main.fragment.StudentsFragment
 import ru.endlesscode.miet.orioks.presentation.main.presenter.MainPresenter
 import ru.endlesscode.miet.orioks.presentation.main.view.MainView
 import ru.endlesscode.miet.orioks.presentation.subjects.fragment.SubjectFragment
@@ -47,7 +46,7 @@ class MainActivity : BaseActivity(), MainView {
         override fun createFragment(screenKey: String, data: Any?): Fragment? {
             return when (screenKey) {
                 Screens.MAIN_MENU -> MainMenuFragment.newInstance()
-                Screens.STUDENTS -> StudentsFragment.newInstance()
+                Screens.STUDENTS -> AuthFragment.newInstance()
                 Screens.SUBJECT -> SubjectFragment.newInstance()
                 else -> PlaceholderFragment.newInstance(screenKey)
             }

@@ -26,4 +26,7 @@
     <string name="password">Пароль</string>
     <string name="remember_password">Запомнить пароль</string>
     <string name="log_in">Войти</string>
+    <string name="error_wrong_login_length">Длина должна быть ровно 7 символов</string>
+    <string name="error_empty_field">Поле не должно быть пустым</string>
+    <string name="error_password_too_short">Пароль слишком короткий</string>
 </resources>
