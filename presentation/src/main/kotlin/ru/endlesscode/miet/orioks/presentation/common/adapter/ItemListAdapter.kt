@@ -4,7 +4,7 @@ import android.support.annotation.LayoutRes
 import android.support.v7.widget.RecyclerView
 import android.view.ViewGroup
 import ru.endlesscode.github.presentation.common.adapter.ListItemType
-import ru.endlesscode.github.util.inflateChild
+import ru.endlesscode.miet.orioks.util.inflateChild
 
 abstract class ItemListAdapter<Item> : RecyclerView.Adapter<ItemListAdapter.ItemViewHolder>() {
 

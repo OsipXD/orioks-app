@@ -66,6 +66,7 @@ class AuthPresenter @Inject constructor(
     }
 
     private fun goToNextScreen() {
+        viewState.closeKeyboard()
         router.newRootScreen(Screens.MAIN_MENU)
     }
 }
