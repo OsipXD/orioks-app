@@ -2,6 +2,7 @@ package ru.endlesscode.miet.orioks.presentation.auth.view
 
 import android.support.annotation.StringRes
 import com.arellomobile.mvp.MvpView
+import com.arellomobile.mvp.viewstate.strategy.OneExecutionStateStrategy
 import com.arellomobile.mvp.viewstate.strategy.SingleStateStrategy
 import com.arellomobile.mvp.viewstate.strategy.SkipStrategy
 import com.arellomobile.mvp.viewstate.strategy.StateStrategyType
@@ -22,4 +23,7 @@ interface AuthView : MvpView {
 
     @StateStrategyType(SingleStateStrategy::class)
     fun toggleLoginButton(enabled: Boolean)
+
+    @StateStrategyType(OneExecutionStateStrategy::class)
+    fun closeKeyboard()
 }

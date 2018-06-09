@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package ru.endlesscode.miet.orioks.util
 
 import javax.inject.Inject

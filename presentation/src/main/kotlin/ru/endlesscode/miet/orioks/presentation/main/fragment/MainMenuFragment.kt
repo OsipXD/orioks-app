@@ -36,7 +36,6 @@ class MainMenuFragment : BaseFragment(), MainMenuView {
     internal lateinit var presenter: MainMenuPresenter
 
     private val navigator: Navigator by lazy { LocalNavigator() }
-
     private var canGoBack = false
 
     @ProvidePresenter

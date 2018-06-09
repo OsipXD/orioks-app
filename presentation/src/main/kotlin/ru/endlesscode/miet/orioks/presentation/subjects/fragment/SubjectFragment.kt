@@ -8,7 +8,6 @@ import kotlinx.android.synthetic.main.item_test.view.*
 import kotlinx.android.synthetic.main.item_test_week.view.*
 import kotlinx.android.synthetic.main.layout_subject_data.*
 import kotlinx.android.synthetic.main.screen_subject.*
-import ru.endlesscode.github.util.inflateChild
 import ru.endlesscode.miet.orioks.DummyData
 import ru.endlesscode.miet.orioks.R
 import ru.endlesscode.miet.orioks.converter.GradeConverter
@@ -18,6 +17,7 @@ import ru.endlesscode.miet.orioks.model.Test
 import ru.endlesscode.miet.orioks.presentation.common.fragment.BaseFragment
 import ru.endlesscode.miet.orioks.util.chunkedBy
 import ru.endlesscode.miet.orioks.util.getColorCompat
+import ru.endlesscode.miet.orioks.util.inflateChild
 import ru.endlesscode.miet.orioks.util.show
 import ru.terrakok.cicerone.Router
 import javax.inject.Inject

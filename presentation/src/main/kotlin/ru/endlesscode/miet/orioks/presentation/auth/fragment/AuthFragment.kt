@@ -11,6 +11,7 @@ import ru.endlesscode.miet.orioks.presentation.auth.presenter.AuthPresenter
 import ru.endlesscode.miet.orioks.presentation.auth.view.AuthView
 import ru.endlesscode.miet.orioks.presentation.common.fragment.BaseFragment
 import ru.endlesscode.miet.orioks.util.asObservable
+import ru.endlesscode.miet.orioks.util.removeFocus
 import javax.inject.Inject
 
 
@@ -50,6 +51,10 @@ class AuthFragment : BaseFragment(), AuthView {
 
     override fun toggleLoginButton(enabled: Boolean) {
         log_in_button.isEnabled = enabled
+    }
+
+    override fun closeKeyboard() {
+        form_layout.removeFocus()
     }
 
     private fun registerListeners() {
