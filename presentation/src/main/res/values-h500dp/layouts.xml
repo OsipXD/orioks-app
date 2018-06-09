@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="screen_auth" type="layout">@layout/screen_auth_large</item>
+</resources>
