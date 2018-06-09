@@ -1,4 +1,4 @@
-package ru.endlesscode.github.presentation.common.adapter
+package ru.endlesscode.miet.orioks.presentation.common.adapter
 
 
 object ListItemType {

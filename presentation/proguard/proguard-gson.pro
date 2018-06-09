@@ -3,4 +3,4 @@
 -keep class com.google.gson.stream.** { *; }
 
 # Application classes that will be serialized/deserialized over Gson
--keep class ru.endlesscode.github.entity.** { *; }
+-keep class ru.endlesscode.miet.orioks.entity.** { *; }
